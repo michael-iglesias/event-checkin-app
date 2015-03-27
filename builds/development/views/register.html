@@ -1,0 +1,24 @@
+<section class="register">
+  <h1>Registration:</h1>
+  <p class="error formerror" ng-show="message">
+    All fields are required! Please try registering again.
+  </p>
+  
+  <form class="" name="registrationForm" ng-submit="register()" novalidate>
+    <input ng-model="user.email" type="email" name="email" placeholder="Email" ng-required="true">
+    <p class="error validationerror" ng-show="registrationForm.email.$invalid && registrationForm.email.$touched">Must be a valid email address.</p>
+
+    <input ng-model="user.firstName" type="text" name="firstName" placeholder="First name" ng-required="true">
+    <p class="error validationerror" ng-show="registrationForm.firstName.$invalid && registrationForm.firstName.$touched">First name is required.</p>
+
+    <input ng-model="user.lastName" type="text" name="lastName" placeholder="Last name" ng-required="true">
+    <p class="error validationerror" ng-show="registrationForm.lastName.$invalid && registrationForm.lastName.$touched">Last name is required.</p>
+
+    <input ng-model="user.password" type="password" name="password" placeholder="Password" ng-required="true">
+    <p class="error validationerror" ng-show="registrationForm.password.$invalid && registrationForm.email.$touched">Password is required.</p>
+    <button type="submit" class="btn" ng-disabled="registrationForm.$invalid">Register &rarr;</button>
+    <p>
+      or <a href="#/register">Register</a>
+    </p>
+  </form>
+</section>

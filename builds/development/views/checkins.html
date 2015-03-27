@@ -1,0 +1,19 @@
+<section class="checkin">
+  <h1>Check-in:</h1>
+  <p class="error formerror" ng-show="message">
+    All fields are required! Please try checking-in again.
+  </p>
+
+  <form class="" name="checkinForm" ng-submit="addCheckin()" novalidate>
+    <input ng-model="user.email" type="email" name="email" placeholder="Email" ng-required="true">
+    <p class="error validationerror" ng-show="checkinForm.email.$invalid && checkinForm.email.$touched">Must be a valid email address.</p>
+
+    <input ng-model="user.firstName" type="text" name="firstName" placeholder="First name" ng-required="true">
+    <p class="error validationerror" ng-show="checkinForm.firstName.$invalid && checkinForm.firstName.$touched">First name is required.</p>
+
+    <input ng-model="user.lastName" type="text" name="lastName" placeholder="Last name" ng-required="true">
+    <p class="error validationerror" ng-show="checkinForm.lastName.$invalid && checkinForm.lastName.$touched">Last name is required.</p>
+
+    <button type="submit" class="btn" ng-disabled="checkinForm.$invalid">Check-in &rarr;</button>
+  </form>
+</section>
